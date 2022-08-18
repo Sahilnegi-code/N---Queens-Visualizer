@@ -1,0 +1,88 @@
+ @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css");
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;1,400;1,500&family=Open+Sans&display=swap');
+
+
+* {
+    font-family:sans-serif;
+}
+body{
+    background-color: cornsilk;
+}
+
+@keyframes popupQueen{
+    0%{
+        transform: scale3d(1,1,1);
+    }
+    50%{
+        transform: scale3d(1.5,1.5,1.5);
+    }
+    100%{
+        transform: scale3d(1, 1, 1);
+    }
+}
+.board{
+    position: relative;
+    border-radius: 3px ;
+    border : 10px solid grey;
+    width: 100%;
+}
+.board .q-array-tile{ 
+        display: inline-block;
+    text-align: center;
+    border-radius: 0px;
+    
+}
+.board  .q-array-tile i.fa-crown
+{
+    
+   color: #fff;
+   font-size: 60px;
+}
+ /* checked */
+
+.photo{
+    height: 75px;
+    width: 250px;
+}
+.Queen{
+    animation-name: popupQueen;
+    animation-duration: 400ms;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+    transform-origin: center;
+    animation-timing-function: ease-in-out;
+    transition: 400ms all;
+}
+
+
+
+/* checking */
+.box{
+    display:grid;
+    grid-gap: 0 0 ;
+    background-color: #fff;
+    grid-template-rows: repeat(var(--Qgrid-rows), 1fr);
+    grid-template-columns: repeat(var(--Qgrid-cols), 1fr);
+    /* box-shadow: 0 0.5px 3px rgba(0, 0, 0, 0.12) , 0 1px 2px rgba(0, 0, 0, 0.24); */
+    transition: all 0.3s cubic-bezier(0.25 ,0.8 , 0.25 , 1) ;
+}
+.Qgrid-item{
+    padding-top: 100%;
+    cursor:pointer;
+    text-align: center;
+}
+.highlight{
+    transition: ease-in 300ms;
+    transform: scale3d(1.25 , 1.25 , 1.25);
+    margin: 1.5rem;
+}
+#Iterations{
+height: 50vh;
+width: 100%;
+overflow: scroll;
+overflow-x: hidden ;
+overflow-y: scroll;
+}
+.alert-success{
+    background-color: #abebc6;
+}
